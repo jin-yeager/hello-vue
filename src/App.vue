@@ -1,11 +1,10 @@
 <script setup>
 
-import Morning from "@/components/Morning.vue";
-import Holl from "@/components/Holl.vue";
+import Lotto from "@/components/Lotto.vue";
 </script>
 
 <template>
-<Holl/>
+<Lotto/>
 
 
 </template>

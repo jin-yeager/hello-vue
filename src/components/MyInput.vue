@@ -1,15 +1,13 @@
 <script setup>
-
+console.log("myinput render")
 const props = defineProps({
-  alt: String,
-  src :String
+  val: String
 });
+
 </script>
 
 <template>
-  속성:{{alt}}
-  <img  v-bind:src="src" />
-
+  <input type="text" v-bind:value="val"/>
 
 </template>
 

@@ -1,18 +1,20 @@
 <script setup>
-import{ ref } from "vue"
-const count = ref(+ '100');
+import {ref} from 'vue'
 
-const myclick = () =>{
+const count = ref("100")
 
-  count.value += 1;
-
+const myclick = () => {
+  let c = parseInt(count.value)
+  c++
+  count.value = c.toString()
 }
 
 </script>
 
 <template>
-  {{count}}
-  <button type="button" @click="myclick">Increase</button>
+  {{ count }}
+  <button type="button" @click="myclick">INCREASE</button>
+
 </template>
 
 <style scoped>

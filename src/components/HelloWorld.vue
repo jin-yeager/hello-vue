@@ -1,9 +1,16 @@
+<script setup>
+import { ref } from 'vue'
 
+defineProps({
+  msg: String,
+})
+
+const count = ref(0)
+</script>
 
 <template>
-
-      <a href="https://vite.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
+  <h1>{{ msg }}</h1>
+  <button type="button" @click="count++">count is {{ count }}</button>
 
 </template>
 

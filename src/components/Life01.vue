@@ -1,23 +1,20 @@
 <script setup>
-import {onMounted,onUnmounted } from 'vue'
-import {ref} from 'vue'
+import {onMounted, onUnmounted, ref} from 'vue'
 
 const msg = ref("LIFE01")
 
-onMounted(()=>{
+onMounted(() => {
   console.log("LIFE01 Mounted")
 })
-onUnmounted(()=>{
+
+onUnmounted(() => {
   console.log("LIFE01 Unmounted")
 })
-
-
-
 
 </script>
 
 <template>
-{{msg}}
+  {{ msg }}
 </template>
 
 <style scoped>

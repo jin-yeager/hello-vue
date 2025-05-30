@@ -1,68 +1,65 @@
 <script setup>
-import { ref } from 'vue'
+import {ref} from 'vue'
 
-const mine = ref('')
-const com = ref(0)
-const result = ref('')
+let mine = ref(".")
+let com = ref("..")
+let result = ref("...")
 
-function myclick() {
-  if (mine.value !== '홀' && mine.value !== '짝') {
-    result.value = '홀 또는 짝을 입력해주세요'
-    com.value = 0
-    return
-  }
-
-  const num = Math.floor(Math.random() * 10) + 1
-  com.value = num
-
-  const parity = num % 2 === 0 ? '짝' : '홀'
-  result.value = mine.value === parity ? '이겼습니다!' : '졌습니다!'
+const myclick = () => {
+	let rnd = Math.random();
+	if(rnd>0.5){
+		com.value = "홀";
+	}else{
+		com.value = "짝";
+	}
+  if(mine.value == com.value){
+		result.value = "이김";
+	} else {
+		result.value = "짐";
+	}
 }
+
 </script>
 
 <template>
   <table>
-    <tbody>
-    <tr>
-      <td>내 선택</td>
-      <td>
-        <input
-            type="text"
-            v-model="mine"
-            placeholder="홀 또는 짝"
-        />
-      </td>
-    </tr>
-    <tr>
-      <td>컴퓨터 숫자</td>
-      <td>
-        <input
-            type="number"
-            v-model="com"
-            readonly
-        />
-      </td>
-    </tr>
-    <tr>
-      <td>결과</td>
-      <td>
-        <input
-            type="text"
-            v-model="result"
-            readonly
-        />
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <button @click="myclick">
-          게임하기
-        </button>
-      </td>
-    </tr>
-    </tbody>
+      <tbody>
+          <tr>
+              <td> 나</td>
+              <td>
+                  <input type="text" v-model="mine" />
+              </td>
+          </tr>
+          <tr>
+              <td> 컴</td>
+              <td>
+                  <input type="text" v-model="com" />
+              </td>
+          </tr>
+          <tr>
+              <td> 결과</td>
+              <td>
+                  <input type="text" v-model="result" />
+              </td>
+          </tr>
+          <tr>
+
+              <td colspan="2">
+                  <input type="button" value="게임하기" @click="myclick" />
+              </td>
+          </tr>
+
+      </tbody>
+
   </table>
+
 </template>
 
-<style>
+<style scoped>
+    input[type='text']{
+        width: 40px;
+    }
+    table,tr,td{
+        border: 1px  solid gainsboro;
+    }
 </style>

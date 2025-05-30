@@ -1,17 +1,18 @@
-<template>
-  <input ref="inputEl" type="text" />
-  <button @click="focusInput">FOCUS</button>
-</template>
-
 <script setup>
-import { ref } from 'vue'
+  import {ref} from "vue";
 
-const inputEl = ref(null)
+  let myobj = ref(null)
+  const myclick = () => {
+    myobj.value.focus()
+  }
 
-function focusInput() {
-  inputEl.value.focus()
-}
 </script>
+
+<template>
+  <input type="text" ref="myobj">
+  <button @click="myclick">focus</button>
+
+</template>
 
 <style scoped>
 

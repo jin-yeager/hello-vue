@@ -1,25 +1,21 @@
-<script setup>
-
-import {ref} from "vue";
-import MyInput from "./components/MyInput.vue";
-
-let obj = ref(null)
-let val = ref("hello")
-
-const myclick = () => {
-  obj.value.value = "bye"
-  val.value = "bye"
-}
-
-</script>
-
 <template>
-  <input type="text" value="hello" ref="obj"/><br/>
-  <MyInput v-bind:value="val"  ref="obj_value" /><br/>
-  <button @click="myclick">CHANGE TEXT</button>
+
+<MyState/>
+<MyState/>
 
 </template>
 
-<style scoped>
+<script>
+
+
+import {defineComponent} from "vue";
+import MyState from "@/components/MyState.vue";
+
+export default defineComponent({
+  components: {MyState}
+})
+</script>
+
+<style>
 
 </style>

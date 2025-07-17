@@ -1,7 +1,6 @@
 <template>
 
-<MyState/>
-<MyState/>
+  <Omok />
 
 </template>
 
@@ -10,9 +9,10 @@
 
 import {defineComponent} from "vue";
 import MyState from "@/components/MyState.vue";
+import Omok from "@/components/Omok.vue";
 
 export default defineComponent({
-  components: {MyState}
+  components: {Omok}
 })
 </script>
 
